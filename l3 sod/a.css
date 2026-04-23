@@ -1,0 +1,372 @@
+/* 
+  L3 SOD - About Page (Upgraded Pro Version)
+*/
+
+:root {
+    --primary-color: #2563eb;
+    --primary-soft: #dbeafe;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --section-bg: #f8fafc;
+    --white: #ffffff;
+
+    --radius: 16px;
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.12);
+
+    --transition: all 0.35s ease;
+}
+/* --- Header & Navigation CSS --- */
+
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+.navbar {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.95); /* Semi-transparent white */
+    backdrop-filter: blur(10px);           /* Modern blur effect */
+    border-bottom: 1px solid #e2e8f0;
+    position: sticky;                      /* Stays at top while scrolling */
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* --- Logo Styling --- */
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+    cursor: pointer;
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+/* --- Navigation Links --- */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    transition: var(--transition);
+}
+
+.nav-links li a:hover, 
+.nav-links li a.active {
+    color: var(--primary-color);
+}
+
+/* --- Header Button Styles --- */
+.btn-outline, .btn-primary {
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+/* Login Button (Outline) */
+.btn-outline {
+    border: 2px solid #e2e8f0;
+    color: var(--text-muted) !important;
+}
+
+.btn-outline:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color) !important;
+    background-color: #f8fafc;
+}
+
+/* Register Button (Solid) */
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white) !important;
+    border: 2px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+/* --- Responsive Header --- */
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        padding: 1rem 0;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+        /* Note: For a real mobile site, you would typically hide these behind a menu icon */
+    }
+    
+    .btn-outline, .btn-primary {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.85rem;
+    }
+}
+/* --- HERO SECTION --- */
+.hero-small {
+    padding: clamp(4rem, 8vw, 6rem) 1.5rem;
+    text-align: center;
+    background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('school.png');
+    background-size: cover;
+    position: relative;
+}
+
+.hero-small h1 {
+    font-size: clamp(2.4rem, 5vw, 3.2rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.hero-small h1 span {
+    color: var(--primary-color);
+}
+
+.hero-small p {
+    max-width: 650px;
+    margin: auto;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* --- STORY SECTION --- */
+.our-story {
+    padding: 6rem 1.5rem;
+    max-width: 1100px;
+    margin: auto;
+}
+body{
+    background-color: paleturquoise;
+}
+.story-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+    position: relative;
+}
+
+.story-content h2::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: #0f172a;
+    display: block;
+    margin-top: 8px;
+    border-radius: 5px;
+}
+
+.story-content p {
+    font-size: 1.08rem;
+    color: var(--text-muted);
+    margin-bottom: 1.6rem;
+    line-height: 1.85;
+}
+
+/* --- GRID LAYOUT --- */
+.grid {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* --- FEATURE CARDS --- */
+.feature-card {
+    background: var(--white);
+    padding: 2.2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+    border: 1px solid #f1f5f9;
+    position: relative;
+    overflow: hidden;
+}
+
+/* subtle top accent */
+.feature-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #2563eb, #38bdf8);
+}
+
+/* hover effect */
+.feature-card:hover {
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: var(--shadow-hover);
+}
+
+/* icon */
+.feature-card .icon {
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    transition: var(--transition);
+}
+
+/* icon animation */
+.feature-card:hover .icon {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.6rem;
+    color: var(--text-main);
+}
+
+.feature-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* --- CTA SECTION --- */
+.cta {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #2563eb, #38bdf8);
+    color: white;
+    text-align: center;
+    border-radius: 20px;
+    margin: 3rem auto;
+    max-width: 1100px;
+    box-shadow: var(--shadow-soft);
+}
+
+.cta h2 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+}
+
+.cta p {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    color: #e0f2fe;
+}
+
+/* CTA button (if you add one) */
+.cta a {
+    display: inline-block;
+    padding: 12px 24px;
+    background: pink;
+    color: #2563eb;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.cta a:hover {
+    background: #f1f5f9;
+    transform: translateY(-2px);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .hero-small {
+        padding: 3rem 1rem;
+    }
+
+    .our-story {
+        padding: 4rem 1rem;
+        text-align: center;
+    }
+
+    .story-content h2::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cta {
+        padding: 4rem 1.5rem;
+        margin: 1.5rem;
+    }
+}
+.footer {
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+/* CLOCK BOX */
+.clock-box {
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* greeting */
+#greeting {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 5px;
+}
+
+/* clock style */
+#clock {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #3b82f6;
+    letter-spacing: 3px;
+
+    /* neon glow */
+    text-shadow:
+        0 0 5px #3b82f6,
+        0 0 10px #3b82f6,
+        0 0 20px #2563eb;
+}
+
+/* blinking colon */
+.blink {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* subtle pulse animation */
+#clock {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}

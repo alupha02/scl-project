@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | L3 SOD</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="r.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="auth-page">
+
+<header class="navbar">
+    <div class="container nav-wrapper">
+        <div class="logo">L3 <span>SOD</span></div>
+
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+        <nav>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html" class="active btn-primary">Register</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- FORM -->
+<main class="auth-container">
+    <div class="auth-card">
+        <div class="auth-header">
+            <h1>Create Account</h1>
+            <p>Join L3 SOD and start building your future</p>
+        </div>
+
+        <form class="auth-form">
+
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="John Doe" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="email@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" placeholder="username" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Confirm</label>
+                    <input type="password" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Gender</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="g"> Male</label>
+                        <label><input type="radio" name="g"> Female</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Date</label>
+                    <input type="date">
+                </div>
+            </div>
+
+            <button class="btn-primary full">Register</button>
+
+        </form>
+
+        <p class="auth-footer">
+            Already have an account? <a href="#">Login</a>
+        </p>
+    </div>
+</main>
+<script>
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+}
+</script>
+<footer class="footer">
+    <div class="container">
+
+        <div class="footer-content">
+
+            <div class="footer-info">
+                <h3>L3 SOD</h3>
+                <p>Empowering students to build real-world software skills and collaborate effectively.</p>
+
+                <!-- SOCIAL ICONS -->
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="home.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="about.html">About</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Support</h4>
+                <a href="#">Help Center</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+    <p>&copy; 2026 L3 SOD Platform. All rights reserved.</p>
+    <div class="clock-box">
+    <p id="greeting"></p>
+    <h2 id="clock"></h2>
+    <small>Kigali, Rwanda</small>
+</div>
+</div>
+
+    </div>
+</footer>
+<script>
+function advancedClock() {
+    const now = new Date();
+
+    let h = now.getHours();
+    let m = now.getMinutes();
+    let s = now.getSeconds();
+
+    // greeting system
+    let greeting = "Welcome";
+    if (h < 12) greeting = "🌅 Good Morning";
+    else if (h < 18) greeting = "☀️ Good Afternoon";
+    else greeting = "🌙 Good Evening";
+
+    // format time
+    h = h < 10 ? "0" + h : h;
+    m = m < 10 ? "0" + m : m;
+    s = s < 10 ? "0" + s : s;
+
+    document.getElementById("clock").innerHTML =
+        `${h}<span class="blink">:</span>${m}<span class="blink">:</span>${s}`;
+
+    document.getElementById("greeting").textContent = greeting;
+}
+
+setInterval(advancedClock, 1000);
+advancedClock();
+</script>
+</body>
+</html>

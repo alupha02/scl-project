@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the talented students of L3 Software Development (SOD). Our gallery showcases the innovators and future leaders of the software industry.">
+    <title>Gallery | L3 SOD Students</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="g.css">
+</head>
+<body>
+
+ <header class="navbar">
+    <div class="container nav-wrapper">
+        <div class="logo">L3 <span>SOD</span></div>
+
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+        <nav>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="Gallery.html" class="active">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html" class="btn-outline">Login</a></li>
+                <li><a href="Register.html" class="btn-primary">Register</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <main>
+        <!-- Gallery Hero -->
+        <section class="hero hero-small">
+            <div class="container">
+                <h1>L3 SOD <span>Students Gallery</span></h1>
+                <p>Meet the innovators, developers, and designers shaping the future of software development.</p>
+            </div>
+        </section>
+
+        <!-- Gallery Grid Section -->
+        <section class="gallery-section">
+            <div class="container">
+                <div class="gallery-grid-main">
+                    
+                    <!-- Student 1 -->
+                    <figure class="student-card">
+                        <div class="image-wrapper">
+                            <img src="g.png" alt="yvette" onerror="this.src='https://via.placeholder.com/300x350?text=Student+1'">
+                            <div class="overlay">
+                                <span class="badge">Full-Stack</span>
+                            </div>
+                        </div>
+                        <figcaption>
+                            <h3>yvette</h3>
+                            <p class="role">Lead Developer</p>
+                            <div class="skills">
+                                <span>React</span>
+                                <span>Node.js</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+
+                    <!-- Student 2 -->
+                    <figure class="student-card">
+                        <div class="image-wrapper">
+                            <img src="h.png" alt="teraste" onerror="this.src='https://via.placeholder.com/300x350?text=Student+2'">
+                            <div class="overlay">
+                                <span class="badge">Mobile</span>
+                            </div>
+                        </div>
+                        <figcaption>
+                            <h3>teraste</h3>
+                            <p class="role">UI/UX Designer</p>
+                            <div class="skills">
+                                <span>Figma</span>
+                                <span>Flutter</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+
+                    <!-- Student 3 -->
+                    <figure class="student-card">
+                        <div class="image-wrapper">
+                            <img src="i.png" alt="ciella" onerror="this.src='https://via.placeholder.com/300x350?text=Student+3'">
+                            <div class="overlay">
+                                <span class="badge">Backend</span>
+                            </div>
+                        </div>
+                        <figcaption>
+                            <h3>ciella</h3>
+                            <p class="role">Database Architect</p>
+                            <div class="skills">
+                                <span>Python</span>
+                                <span>SQL</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+
+                    <!-- Student 4 -->
+                    <figure class="student-card">
+                        <div class="image-wrapper">
+                            <img src="j.png" alt="menelick" onerror="this.src='https://via.placeholder.com/300x350?text=Student+4'">
+                            <div class="overlay">
+                                <span class="badge">DevOps</span>
+                            </div>
+                        </div>
+                        <figcaption>
+                            <h3>Menelick</h3>
+                            <p class="role">Systems Engineer</p>
+                            <div class="skills">
+                                <span>Docker</span>
+                                <span>AWS</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+
+                    <!-- Student 5 -->
+                    <figure class="student-card">
+                        <div class="image-wrapper">
+                            <img src="k.png" alt="kellia" onerror="this.src='https://via.placeholder.com/300x350?text=Student+5'">
+                            <div class="overlay">
+                                <span class="badge">AI/ML</span>
+                            </div>
+                        </div>
+                        <figcaption>
+                            <h3>kellia</h3>
+                            <p class="role">ML Engineer</p>
+                            <div class="skills">
+                                <span>PyTorch</span>
+                                <span>Data Science</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+
+                    <!-- Student 6 -->
+                    <figure class="student-card">
+                        <div class="image-wrapper">
+                            <img src="l.png" alt="melivei" onerror="this.src='https://via.placeholder.com/300x350?text=Student+6'">
+                            <div class="overlay">
+                                <span class="badge">Security</span>
+                            </div>
+                        </div>
+                        <figcaption>
+                            <h3>melivei</h3>
+                            <p class="role">Security Analyst</p>
+                            <div class="skills">
+                                <span>CyberSec</span>
+                                <span>C++</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>L3 SOD</h3>
+                    <p>Showcasing the excellence of our Software Development students.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact Support</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+    <p>&copy; 2026 L3 SOD Platform. All rights reserved.</p>
+    <div class="clock-box">
+    <p id="greeting"></p>
+    <h2 id="clock"></h2>
+    <small>Kigali, Rwanda</small>
+</div>
+</div>
+        </div>
+    </footer>
+<script>
+function advancedClock() {
+    const now = new Date();
+
+    let h = now.getHours();
+    let m = now.getMinutes();
+    let s = now.getSeconds();
+
+    // greeting system
+    let greeting = "Welcome";
+    if (h < 12) greeting = "🌅 Good Morning";
+    else if (h < 18) greeting = "☀️ Good Afternoon";
+    else greeting = "🌙 Good Evening";
+
+    // format time
+    h = h < 10 ? "0" + h : h;
+    m = m < 10 ? "0" + m : m;
+    s = s < 10 ? "0" + s : s;
+
+    document.getElementById("clock").innerHTML =
+        `${h}<span class="blink">:</span>${m}<span class="blink">:</span>${s}`;
+
+    document.getElementById("greeting").textContent = greeting;
+}
+
+setInterval(advancedClock, 1000);
+advancedClock();
+</script>
+</body>
+</html>

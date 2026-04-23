@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Securely login to the L3 SOD student platform. Access your resources, projects, and community profile.">
+    <title>Login | L3 SOD Platform</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="l.css">
+</head>
+<body class="auth-page">
+
+    <header class="navbar">
+    <div class="container nav-wrapper">
+        <div class="logo">L3 <span>SOD</span></div>
+
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+        <nav>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html" class="active">Login</a></li>
+                <li><a href="Register.html" class="btn-primary">Register</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <main class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>Welcome Back</h1>
+                <p>Enter your credentials to access the L3 SOD platform.</p>
+            </div>
+            
+            <form action="#" method="POST" class="auth-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="e.g. jdoe2026" required>
+                </div>
+
+                <div class="form-group">
+                    <div class="label-wrapper">
+                        <label for="password">Password</label>
+                        <a href="#" class="forgot-link">Forgot?</a>
+                    </div>
+                    <input type="password" id="password" name="password" placeholder="••••••••" required>
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        Remember me
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-primary full-width">Sign In</button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Don't have an account? <a href="register.html">Create one</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>L3 SOD</h3>
+                    <p>Building the future of software, one line of code at a time.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact Support</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+    <p>&copy; 2026 L3 SOD Platform. All rights reserved.</p>
+    <div class="clock-box">
+    <p id="greeting"></p>
+    <h2 id="clock"></h2>
+    <small>Kigali, Rwanda</small>
+</div>
+</div>
+        </div>
+    </footer>
+<script>
+function advancedClock() {
+    const now = new Date();
+
+    let h = now.getHours();
+    let m = now.getMinutes();
+    let s = now.getSeconds();
+
+    // greeting system
+    let greeting = "Welcome";
+    if (h < 12) greeting = "🌅 Good Morning";
+    else if (h < 18) greeting = "☀️ Good Afternoon";
+    else greeting = "🌙 Good Evening";
+
+    // format time
+    h = h < 10 ? "0" + h : h;
+    m = m < 10 ? "0" + m : m;
+    s = s < 10 ? "0" + s : s;
+
+    document.getElementById("clock").innerHTML =
+        `${h}<span class="blink">:</span>${m}<span class="blink">:</span>${s}`;
+
+    document.getElementById("greeting").textContent = greeting;
+}
+
+setInterval(advancedClock, 1000);
+advancedClock();
+// update every second
+setInterval(updateTime, 1000);
+
+// run immediately
+updateTime();
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+}
+/* PAGE EXIT ANIMATION */
+document.querySelectorAll("a").forEach(link => {
+    const target = link.getAttribute("href");
+
+    // ignore external links and buttons
+    if (!target || target.startsWith("#") || target.startsWith("http")) return;
+
+    link.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        document.body.classList.add("page-exit");
+
+        setTimeout(() => {
+            window.location.href = target;
+        }, 300);
+    });
+});
+</script>
+</body>
+</html>

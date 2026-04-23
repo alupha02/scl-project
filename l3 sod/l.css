@@ -1,0 +1,405 @@
+/* =========================
+   RESET + VARIABLES
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #2563eb;
+    --dark: #0f172a;
+    --text: #1e293b;
+    --muted: #64748b;
+    --bg: #f8fafc;
+    --white: #ffffff;
+    --radius: 14px;
+    --shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    min-height: 100vh;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+    background: white;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+    color: var(--primary);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white !important;
+    padding: 8px 14px;
+    border-radius: var(--radius);
+}
+
+/* MOBILE MENU BUTTON */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* =========================
+   AUTH CONTAINER
+========================= */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+}
+
+/* =========================
+   LOGIN CARD (GLASS EFFECT)
+========================= */
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: var(--radius);
+    padding: 30px;
+    color: white;
+
+    /* animation */
+    animation: fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.auth-header h1 {
+    font-size: 1.8rem;
+}
+
+.auth-header p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-top: 5px;
+}
+
+/* =========================
+   FORM
+========================= */
+.auth-form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    transform: scale(1.02);
+}
+
+/* forgot link */
+.label-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.forgot-link {
+    font-size: 0.8rem;
+    color: #e0f2fe;
+}
+
+/* checkbox */
+.checkbox-container {
+    font-size: 0.85rem;
+}
+
+/* button */
+.full-width {
+    width: 100%;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.full-width:hover {
+    background: #1e40af;
+    transform: translateY(-2px);
+}
+
+/* footer */
+.auth-footer {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.auth-footer a {
+    color: #e0f2fe;
+}
+
+/* =========================
+   RESPONSIVE NAV
+========================= */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 70px;
+        background: white;
+        width: 220px;
+        padding: 20px;
+        box-shadow: var(--shadow);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+}
+/* =========================
+   PAGE TRANSITION SYSTEM
+========================= */
+
+/* page fade-in on load */
+body {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: pageLoad 0.5s ease forwards;
+}
+
+/* animation */
+@keyframes pageLoad {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* fade out when leaving page */
+.page-exit {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: 0.4s ease;
+}
+/* =========================
+   FOOTER MODERN STYLE
+========================= */
+.footer {
+    background: #0f172a;
+    color: #cbd5e1;
+    padding: 50px 0 20px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* LEFT INFO */
+.footer-info h3 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.footer-info p {
+    max-width: 300px;
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.5;
+}
+
+/* LINKS */
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    position: relative;
+}
+
+/* hover animation underline */
+.footer-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background: #3b82f6;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+.footer-links a:hover::after {
+    width: 100%;
+}
+
+/* BOTTOM LINE */
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #1e293b;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+/* =========================
+   RESPONSIVE FOOTER
+========================= */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-info p {
+        margin: auto;
+    }
+
+    .footer-links {
+        align-items: center;
+    }
+}
+/* CLOCK BOX */
+.clock-box {
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* greeting */
+#greeting {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 5px;
+}
+
+/* clock style */
+#clock {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #3b82f6;
+    letter-spacing: 3px;
+
+    /* neon glow */
+    text-shadow:
+        0 0 5px #3b82f6,
+        0 0 10px #3b82f6,
+        0 0 20px #2563eb;
+}
+
+/* blinking colon */
+.blink {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* subtle pulse animation */
+#clock {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
